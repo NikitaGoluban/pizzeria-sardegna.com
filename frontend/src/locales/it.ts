@@ -39,6 +39,38 @@ export const itTranslation = {
     intro: 'Sapori italiani, piatti preparati al momento e un ambiente rilassato per gustare pizza, pasta e molto altro.',
     call: 'Chiama: +49 6428 4474948',
     viewMenu: 'Scopri il menù',
+    sardinia: {
+      eyebrow: 'L’isola dietro il nostro nome',
+      title: 'Uno sguardo sulla Sardegna',
+      intro: 'Mare, montagne e calda luce mediterranea: scoprite i paesaggi che ispirano il carattere della Pizzeria Sardegna.',
+      photoCredit: 'Foto',
+      previous: 'Foto precedente della Sardegna',
+      next: 'Foto successiva della Sardegna',
+      chooseSlide: 'Scegli una foto della Sardegna',
+      showSlide: 'Mostra foto',
+      slides: {
+        goloritze: {
+          location: 'Cala Goloritzé · Sardegna orientale',
+          description: 'Acqua turchese sotto le pareti di calcare',
+          alt: 'Baia di Cala Goloritzé con mare turchese e pareti calcaree in Sardegna',
+        },
+        pelosa: {
+          location: 'La Pelosa · Sardegna settentrionale',
+          description: 'Acqua azzurra e trasparente sulla costa di Stintino',
+          alt: 'Acqua turchese e trasparente alla spiaggia La Pelosa vicino a Stintino in Sardegna',
+        },
+        alghero: {
+          location: 'Alghero · Sardegna occidentale',
+          description: 'La costa mediterranea nella luce della sera',
+          alt: 'Tramonto sul Mar Mediterraneo vicino ad Alghero in Sardegna',
+        },
+        supramonte: {
+          location: 'Supramonte · Sardegna centrale',
+          description: 'Valli selvagge, boschi e silenzio di montagna',
+          alt: 'Valle verde e paesaggio roccioso nella regione del Supramonte in Sardegna',
+        },
+      },
+    },
     welcome: {
       title: 'Benvenuti alla Pizzeria Sardegna',
       firstText: 'A Stadtallendorf, la Pizzeria Sardegna unisce l’atmosfera italiana a una calorosa ospitalità.',

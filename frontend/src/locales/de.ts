@@ -43,6 +43,38 @@ export const deTranslation = {
     intro: 'Italienischer Genuss, frisch zubereitete Gerichte und ein entspannter Ort für Pizza, Pasta und mehr.',
     call: 'Anrufen: +49 6428 4474948',
     viewMenu: 'Speisekarte ansehen',
+    sardinia: {
+      eyebrow: 'Die Insel hinter unserem Namen',
+      title: 'Ein Blick auf Sardinien',
+      intro: 'Meer, Berge und warmes mediterranes Licht – entdecken Sie die Landschaften, die den Charakter der Pizzeria Sardegna prägen.',
+      photoCredit: 'Foto',
+      previous: 'Vorheriges Sardinien-Foto',
+      next: 'Nächstes Sardinien-Foto',
+      chooseSlide: 'Sardinien-Foto auswählen',
+      showSlide: 'Foto anzeigen',
+      slides: {
+        goloritze: {
+          location: 'Cala Goloritzé · Ostsardinien',
+          description: 'Türkisfarbenes Wasser unter hellen Kalksteinfelsen',
+          alt: 'Bucht Cala Goloritzé mit türkisfarbenem Meer und Kalksteinfelsen auf Sardinien',
+        },
+        pelosa: {
+          location: 'La Pelosa · Nordsardinien',
+          description: 'Flaches blaues Wasser an der Küste von Stintino',
+          alt: 'Klares türkisfarbenes Wasser am Strand La Pelosa bei Stintino auf Sardinien',
+        },
+        alghero: {
+          location: 'Alghero · Westsardinien',
+          description: 'Die Mittelmeerküste im warmen Abendlicht',
+          alt: 'Sonnenuntergang über dem Mittelmeer bei Alghero auf Sardinien',
+        },
+        supramonte: {
+          location: 'Supramonte · Zentralsardinien',
+          description: 'Wilde Täler, Wälder und die Stille der Berge',
+          alt: 'Grünes Bergtal und felsige Landschaft im Supramonte auf Sardinien',
+        },
+      },
+    },
     welcome: {
       title: 'Willkommen bei Pizzeria Sardegna',
       firstText: 'In Stadtallendorf verbindet die Pizzeria Sardegna italienisches Ambiente mit herzlicher Gastfreundschaft.',

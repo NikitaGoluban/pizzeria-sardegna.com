@@ -34,6 +34,7 @@ import { PageShell } from '../components/ui/PageShell'
 import { Section } from '../components/ui/Section'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { getLocaleForLanguage } from '../i18n'
+import { SardiniaSlideshow } from '../components/home/SardiniaSlideshow'
 
 
 // usePageMeta jest własnym hookiem Reacta.
@@ -69,6 +70,8 @@ export function RestaurantHomePage() {
           <Link className="button button-secondary" to="/menu.html">{translation.t('home.viewMenu')}</Link>
         </div>
       </PageIntro>
+
+      <SardiniaSlideshow />
 
       <Section title={translation.t('home.welcome.title')}>
         <p>{translation.t('home.welcome.firstText')}</p>
