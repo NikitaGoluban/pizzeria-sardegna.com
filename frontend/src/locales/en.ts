@@ -39,38 +39,6 @@ export const enTranslation = {
     intro: 'Italian flavours, freshly prepared dishes and a relaxed place for pizza, pasta and more.',
     call: 'Call: +49 6428 4474948',
     viewMenu: 'View our menu',
-    sardinia: {
-      eyebrow: 'The island behind our name',
-      title: 'A glimpse of Sardinia',
-      intro: 'Sea, mountains and warm Mediterranean light — discover the landscapes that inspire the character of Pizzeria Sardegna.',
-      photoCredit: 'Photo',
-      previous: 'Previous Sardinia photo',
-      next: 'Next Sardinia photo',
-      chooseSlide: 'Choose a Sardinia photo',
-      showSlide: 'Show photo',
-      slides: {
-        goloritze: {
-          location: 'Cala Goloritzé · Eastern Sardinia',
-          description: 'Turquoise water beneath the limestone cliffs',
-          alt: 'Cala Goloritzé bay with turquoise sea and limestone cliffs in Sardinia',
-        },
-        pelosa: {
-          location: 'La Pelosa · Northern Sardinia',
-          description: 'Shallow blue water and the coast of Stintino',
-          alt: 'Clear turquoise water at La Pelosa beach near Stintino in Sardinia',
-        },
-        alghero: {
-          location: 'Alghero · Western Sardinia',
-          description: 'The Mediterranean coast in the evening light',
-          alt: 'Sunset over the Mediterranean Sea near Alghero in Sardinia',
-        },
-        supramonte: {
-          location: 'Supramonte · Central Sardinia',
-          description: 'Wild valleys, forests and mountain silence',
-          alt: 'Green mountain valley and rocky landscape in the Supramonte region of Sardinia',
-        },
-      },
-    },
     welcome: {
       title: 'Welcome to Pizzeria Sardegna',
       firstText: 'In Stadtallendorf, Pizzeria Sardegna combines Italian atmosphere with warm hospitality.',
