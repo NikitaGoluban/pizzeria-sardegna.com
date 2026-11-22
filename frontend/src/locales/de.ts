@@ -23,6 +23,10 @@ export const deTranslation = {
       english: 'Englisch',
       italian: 'Italienisch',
     },
+    mobileMenu: {
+      open: 'Navigationsmenü öffnen',
+      close: 'Navigationsmenü schließen',
+    },
     footer: {
       privacy: 'Datenschutzerklärung',
     },

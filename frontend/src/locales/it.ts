@@ -19,6 +19,10 @@ export const itTranslation = {
       english: 'Inglese',
       italian: 'Italiano',
     },
+    mobileMenu: {
+      open: 'Apri il menu di navigazione',
+      close: 'Chiudi il menu di navigazione',
+    },
     footer: {
       privacy: 'Informativa sulla privacy',
     },

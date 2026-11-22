@@ -27,6 +27,7 @@ zmieni teksty całej witryny na włoskie, ale nie przeładuje dokumentu.
 */
 
 // Link służy do przechodzenia pomiędzy podstronami aplikacji bez pełnego przeładowania.
+import { useEffect, useState, type MouseEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -38,6 +39,29 @@ import { LanguageSwitcher } from './LanguageSwitcher'
 // SiteHeader tworzy nagłówek widoczny na każdej podstronie.
 export function SiteHeader() {
   const translation = useTranslation()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  // Klawisz Escape zapewnia szybkie zamknięcie menu osobom używającym klawiatury.
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return undefined
+    }
+
+    function closeMenuWithEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', closeMenuWithEscape)
+    return () => document.removeEventListener('keydown', closeMenuWithEscape)
+  }, [isMenuOpen])
+
+  function closeMenuAfterLinkClick(event: MouseEvent<HTMLDivElement>) {
+    if (event.target instanceof Element && event.target.closest('a') !== null) {
+      setIsMenuOpen(false)
+    }
+  }
 
   return (
     // Element header oznacza nagłówek witryny.
@@ -46,7 +70,7 @@ export function SiteHeader() {
       <div className="container header-layout">
         {/* to="/" prowadzi do strony głównej. */}
         {/* aria-label przekazuje opis linku czytnikom ekranu. */}
-        <Link className="site-logo" to="/" aria-label={translation.t('common.logoHomeLabel')}>
+        <Link className="site-logo" to="/" aria-label={translation.t('common.logoHomeLabel')} onClick={() => setIsMenuOpen(false)}>
           {/* Osobna ramka pozwala przeprowadzić błysk tylko przez powierzchnię herbu. */}
           <span className="site-crest-frame" aria-hidden="true">
             <img className="site-crest" src="/sardinia-crest.svg" alt="" />
@@ -62,7 +86,24 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <div className="header-actions-layout">
+        <button
+          className={isMenuOpen ? 'menu-toggle is-open' : 'menu-toggle'}
+          type="button"
+          aria-controls="site-mobile-menu"
+          aria-expanded={isMenuOpen}
+          aria-label={translation.t(isMenuOpen ? 'common.mobileMenu.close' : 'common.mobileMenu.open')}
+          onClick={() => setIsMenuOpen((currentValue) => !currentValue)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <div
+          id="site-mobile-menu"
+          className={isMenuOpen ? 'header-actions-layout is-open' : 'header-actions-layout'}
+          onClickCapture={closeMenuAfterLinkClick}
+        >
           {/* W tym miejscu React wstawia całe menu nawigacyjne. */}
           <SiteNavigation />
           {/* Przełącznik zmienia wspólny język całej aplikacji. */}

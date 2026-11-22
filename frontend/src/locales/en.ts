@@ -19,6 +19,10 @@ export const enTranslation = {
       english: 'English',
       italian: 'Italian',
     },
+    mobileMenu: {
+      open: 'Open navigation menu',
+      close: 'Close navigation menu',
+    },
     footer: {
       privacy: 'Privacy policy',
     },
