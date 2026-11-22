@@ -29,7 +29,7 @@ import type { ReactNode } from 'react'
 
 interface PageIntroProps {
   eyebrow?: string
-  title: string
+  title: ReactNode
   children?: ReactNode
   className?: string
 }

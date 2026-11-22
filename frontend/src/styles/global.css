@@ -491,6 +491,23 @@ p {
 
 .contact-page-intro > h1 {
   grid-area: title;
+  font-size: clamp(2.4rem, 4.3vw, 3.55rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.contact-title-stack {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.contact-title-location {
+  color: var(--color-accent);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.045em;
 }
 
 .contact-intro-text {

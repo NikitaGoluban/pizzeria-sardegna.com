@@ -46,7 +46,16 @@ export function ContactPage() {
 
   return (
     <PageShell>
-      <PageIntro className="contact-page-intro" eyebrow={translation.t('contact.eyebrow')} title={translation.t('contact.title')}>
+      <PageIntro
+        className="contact-page-intro"
+        eyebrow={translation.t('contact.eyebrow')}
+        title={(
+          <span className="contact-title-stack">
+            <span>{translation.t('contact.title')}</span>
+            <span className="contact-title-location">{translation.t('contact.location')}</span>
+          </span>
+        )}
+      >
         <p className="contact-intro-text">{translation.t('contact.intro')}</p>
         {/* Mapa pokazuje położenie Sardynii w przybliżonym fragmencie Europy Zachodniej. */}
         <span className="contact-europe-map" aria-hidden="true">
