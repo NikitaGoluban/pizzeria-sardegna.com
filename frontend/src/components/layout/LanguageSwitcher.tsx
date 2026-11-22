@@ -44,7 +44,8 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <div className="language-switcher" role="group" aria-label={translation.t('common.language.label')}>
+    // Klasa is-de, is-en albo is-it określa w CSS położenie przesuwanej złotej kapsuły.
+    <div className={`language-switcher is-${currentLanguage ?? 'de'}`} role="group" aria-label={translation.t('common.language.label')}>
       <button className={getLanguageButtonClassName(currentLanguage, 'de')} type="button" onClick={changeToGerman} aria-label={translation.t('common.language.german')} aria-pressed={currentLanguage === 'de'}>DE</button>
       <button className={getLanguageButtonClassName(currentLanguage, 'en')} type="button" onClick={changeToEnglish} aria-label={translation.t('common.language.english')} aria-pressed={currentLanguage === 'en'}>EN</button>
       <button className={getLanguageButtonClassName(currentLanguage, 'it')} type="button" onClick={changeToItalian} aria-label={translation.t('common.language.italian')} aria-pressed={currentLanguage === 'it'}>IT</button>
