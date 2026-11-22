@@ -15,3 +15,11 @@
 - Author: Vonvikken
 - License: Public domain
 - Use on this site: the SVG supplies the geographic mask used to illuminate the complete island of Sardinia over the Europe map.
+
+## La Pelosa page background
+
+- Local files: `backgrounds/la-pelosa-1280.jpg`, `backgrounds/la-pelosa-1920.jpg`
+- Source: [La Pelosa beach, north Sardinia](https://commons.wikimedia.org/wiki/File:La_Pelosa_beach,_north_Sardinia_(Italy)_(24086631522).jpg)
+- Author: Tommie Hansen
+- License: [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
+- Changes: Wikimedia Commons thumbnails resized to 1280 and 1920 pixels; the website crops and darkens the photograph responsively with CSS.

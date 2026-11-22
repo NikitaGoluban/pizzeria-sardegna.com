@@ -29,6 +29,8 @@ export const deTranslation = {
     },
     footer: {
       privacy: 'Datenschutzerklärung',
+      backgroundPhoto: 'Hintergrundfoto:',
+      backgroundPhotoChanges: 'verkleinert und zugeschnitten',
     },
   },
   seo: {

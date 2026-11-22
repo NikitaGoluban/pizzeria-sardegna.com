@@ -41,6 +41,13 @@ export function SiteFooter() {
           <span> · </span>
           <Link to="/privacy-policy.html">{translation.t('common.footer.privacy')}</Link>
         </div>
+        <p className="background-photo-credit">
+          {translation.t('common.footer.backgroundPhoto')}{' '}
+          <a href="https://commons.wikimedia.org/wiki/File:La_Pelosa_beach,_north_Sardinia_(Italy)_(24086631522).jpg" target="_blank" rel="noreferrer">Tommie Hansen</a>
+          {' · '}
+          <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noreferrer">CC BY 2.0</a>
+          {' · '}{translation.t('common.footer.backgroundPhotoChanges')}
+        </p>
       </div>
     </footer>
   )

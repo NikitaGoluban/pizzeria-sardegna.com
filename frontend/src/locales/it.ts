@@ -25,6 +25,8 @@ export const itTranslation = {
     },
     footer: {
       privacy: 'Informativa sulla privacy',
+      backgroundPhoto: 'Foto di sfondo:',
+      backgroundPhotoChanges: 'ridimensionata e ritagliata',
     },
   },
   seo: {

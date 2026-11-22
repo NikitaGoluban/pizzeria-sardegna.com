@@ -25,6 +25,8 @@ export const enTranslation = {
     },
     footer: {
       privacy: 'Privacy policy',
+      backgroundPhoto: 'Background photo:',
+      backgroundPhotoChanges: 'resized and cropped',
     },
   },
   seo: {

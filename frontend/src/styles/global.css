@@ -1,6 +1,13 @@
 body {
   min-width: 20rem;
-  background: var(--color-background);
+  background-color: var(--color-background);
+  background-image:
+    linear-gradient(180deg, rgb(4 8 10 / 78%), rgb(5 7 9 / 88%)),
+    url('/backgrounds/la-pelosa-1920.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--color-text);
   font-family: Inter, system-ui, sans-serif;
   line-height: 1.6;
@@ -950,6 +957,30 @@ p {
   margin: 0;
 }
 
+.footer-layout {
+  flex-wrap: wrap;
+  padding-block: 0.65rem;
+}
+
+.background-photo-credit {
+  width: 100%;
+  margin-block-start: -0.35rem !important;
+  color: rgb(185 185 185 / 70%);
+  font-size: 0.62rem;
+  letter-spacing: 0.025em;
+  text-align: center;
+}
+
+.background-photo-credit a {
+  color: rgb(245 185 66 / 72%);
+  text-decoration: none;
+}
+
+.background-photo-credit a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
 .button {
   min-height: 2.75rem;
   border: 1px solid var(--color-border);
@@ -1197,10 +1228,23 @@ p {
 }
 
 @media (max-width: 48rem) {
+  body {
+    background-image:
+      linear-gradient(180deg, rgb(4 8 10 / 80%), rgb(5 7 9 / 90%)),
+      url('/backgrounds/la-pelosa-1280.jpg');
+    background-position: 58% top;
+    background-attachment: scroll;
+  }
+
   .footer-layout {
     align-items: flex-start;
     flex-direction: column;
     padding-block: var(--space-2);
+  }
+
+  .background-photo-credit {
+    margin-block-start: 0 !important;
+    text-align: start;
   }
 
   .header-layout {
