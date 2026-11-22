@@ -120,7 +120,7 @@ p {
   position: relative;
   display: grid;
   justify-items: start;
-  line-height: 1;
+  line-height: normal;
 }
 
 .site-logo-prefix {
@@ -134,6 +134,8 @@ p {
 
 .site-logo-sardegna {
   position: relative;
+  display: block;
+  padding-block-end: 0.08em;
   background: linear-gradient(180deg, #fff3bc 0%, #f5b942 52%, #c88f26 100%);
   background-clip: text;
   color: transparent;
@@ -141,6 +143,7 @@ p {
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: 0.025em;
+  line-height: 1.12;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: name-glow 9s ease-in-out 250ms infinite;
@@ -172,13 +175,6 @@ p {
   border-radius: 999px;
   background: linear-gradient(90deg, #009246 0 33.333%, #fff 33.333% 66.666%, #ce2b37 66.666% 100%);
   box-shadow: 0 0 0.3rem rgb(255 255 255 / 18%);
-  transform: scaleX(0.78);
-  transform-origin: left center;
-  transition: transform 260ms ease;
-}
-
-.site-logo:hover .site-logo-underline {
-  transform: scaleX(1);
 }
 
 .site-logo-underline::after {
@@ -298,9 +294,6 @@ p {
     animation: none;
   }
 
-  .site-logo-underline {
-    transition: none;
-  }
 }
 
 .header-actions-layout {
