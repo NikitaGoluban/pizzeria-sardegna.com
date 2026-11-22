@@ -62,6 +62,7 @@ export function ContactPage() {
           <img src="/europe-blank-map.png" alt="" />
           <span className="contact-sardinia-highlight" />
           <span className="contact-map-label">Sardegna</span>
+          <span className="contact-map-coordinates">40°N · 9°E</span>
         </span>
       </PageIntro>
 
@@ -71,10 +72,12 @@ export function ContactPage() {
           <h2 id="contact-details-title">{translation.t('contact.methodsTitle')}</h2>
           <div className="contact-detail-list">
             <div className="contact-detail">
+              <span className="contact-detail-icon" aria-hidden="true">☎</span>
               <strong>{translation.t('contact.phone')}</strong>
               <a className="contact-primary-link" href="tel:+4964284474948">+49 6428 4474948</a>
             </div>
             <div className="contact-detail">
+              <span className="contact-detail-icon" aria-hidden="true">⌖</span>
               <strong>{translation.t('contact.address')}</strong>
               <a href={directionsUrl} target="_blank" rel="noreferrer">Stadionweg 2<br />35260 Stadtallendorf</a>
             </div>

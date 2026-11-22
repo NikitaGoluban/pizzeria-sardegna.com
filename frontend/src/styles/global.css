@@ -474,7 +474,9 @@ p {
 }
 
 .contact-page-intro {
+  position: relative;
   display: grid;
+  overflow: hidden;
   grid-template-areas:
     'eyebrow map'
     'title map'
@@ -482,11 +484,37 @@ p {
   grid-template-columns: minmax(0, 1fr) 18rem;
   column-gap: var(--space-4);
   align-items: center;
+  background:
+    radial-gradient(circle at 83% 50%, rgb(245 185 66 / 10%), transparent 32%),
+    radial-gradient(circle at 4% 112%, rgb(206 43 55 / 8%), transparent 28%),
+    linear-gradient(135deg, rgb(24 24 24 / 98%), rgb(13 13 13 / 99%));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 3%), 0 1.25rem 3rem rgb(0 0 0 / 16%);
+  isolation: isolate;
+}
+
+.contact-page-intro::before {
+  position: absolute;
+  bottom: -10rem;
+  left: -8rem;
+  z-index: -1;
+  width: 20rem;
+  height: 20rem;
+  border: 1px solid rgb(245 185 66 / 8%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2.5rem rgb(245 185 66 / 2.5%), 0 0 0 5rem rgb(245 185 66 / 1.5%);
+  content: '';
+  pointer-events: none;
 }
 
 .contact-page-intro > .eyebrow {
   grid-area: eyebrow;
   align-self: end;
+  width: fit-content;
+  padding: 0.28rem 0.65rem;
+  border: 1px solid rgb(245 185 66 / 22%);
+  border-radius: 999px;
+  background: rgb(245 185 66 / 5%);
+  box-shadow: inset 0 0 0.75rem rgb(245 185 66 / 3%);
 }
 
 .contact-page-intro > h1 {
@@ -502,6 +530,9 @@ p {
 }
 
 .contact-title-location {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   color: var(--color-accent);
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(1.05rem, 1.8vw, 1.45rem);
@@ -510,9 +541,24 @@ p {
   letter-spacing: 0.045em;
 }
 
+.contact-title-location::before {
+  width: 2rem;
+  height: 1px;
+  flex: 0 0 auto;
+  background: linear-gradient(90deg, #009246 0 33%, #f1f2f1 33% 66%, #ce2b37 66% 100%);
+  box-shadow: 0 0 0.45rem rgb(245 185 66 / 18%);
+  content: '';
+}
+
 .contact-intro-text {
   grid-area: intro;
   align-self: start;
+  max-width: 44rem;
+  margin: 0;
+  padding-inline-start: 0.8rem;
+  border-inline-start: 2px solid rgb(245 185 66 / 35%);
+  color: rgb(244 244 244 / 84%);
+  font-size: 1.02rem;
 }
 
 .contact-europe-map {
@@ -524,7 +570,18 @@ p {
   border: 1px solid rgb(245 185 66 / 18%);
   border-radius: var(--radius);
   background: radial-gradient(circle at 51% 76%, rgb(245 185 66 / 16%), rgb(11 11 11 / 72%) 46%, #0b0b0b 78%);
-  box-shadow: inset 0 0 2.5rem rgb(0 0 0 / 45%), 0 0 1.5rem rgb(245 185 66 / 5%);
+  box-shadow: inset 0 0 2.5rem rgb(0 0 0 / 52%), 0 0 0 0.35rem rgb(0 0 0 / 24%), 0 1rem 2.5rem rgb(0 0 0 / 28%), 0 0 1.5rem rgb(245 185 66 / 7%);
+}
+
+.contact-europe-map::after {
+  position: absolute;
+  inset: 0.55rem;
+  z-index: 2;
+  border: 1px solid rgb(245 185 66 / 12%);
+  border-radius: calc(var(--radius) - 0.45rem);
+  box-shadow: inset 0 0 1.25rem rgb(0 0 0 / 28%);
+  content: '';
+  pointer-events: none;
 }
 
 .contact-europe-map > img {
@@ -550,6 +607,7 @@ p {
   -webkit-mask: url('/sardinia-map-source.svg') center / contain no-repeat;
   mask: url('/sardinia-map-source.svg') center / contain no-repeat;
   animation: sardinia-island-glow 2.8s ease-in-out infinite;
+  z-index: 3;
 }
 
 .contact-map-label {
@@ -566,6 +624,19 @@ p {
   font-style: italic;
   letter-spacing: 0.06em;
   white-space: nowrap;
+  z-index: 4;
+}
+
+.contact-map-coordinates {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0.9rem;
+  z-index: 4;
+  color: rgb(245 185 66 / 62%);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 @keyframes sardinia-island-glow {
@@ -585,7 +656,7 @@ p {
 .contact-card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3);
+  gap: 1.25rem;
   margin-block-start: var(--space-3);
 }
 
@@ -593,14 +664,24 @@ p {
 .contact-directions {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgb(245 185 66 / 14%);
   border-radius: var(--radius);
-  background: linear-gradient(145deg, var(--color-surface), rgb(11 11 11 / 96%));
+  background:
+    radial-gradient(circle at 100% 0%, rgb(245 185 66 / 7%), transparent 32%),
+    linear-gradient(145deg, var(--color-surface), rgb(11 11 11 / 97%));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 2%), 0 1rem 2.5rem rgb(0 0 0 / 14%);
 }
 
 .contact-card {
   min-height: 18rem;
   padding: var(--space-4);
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.contact-card:hover {
+  border-color: rgb(245 185 66 / 28%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 3%), 0 1.25rem 2.75rem rgb(0 0 0 / 22%), 0 0 1.25rem rgb(245 185 66 / 4%);
+  transform: translateY(-3px);
 }
 
 .contact-card::before,
@@ -617,7 +698,22 @@ p {
 
 .contact-card h2,
 .contact-directions h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
   margin-block: 0 var(--space-3);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  letter-spacing: 0.015em;
+}
+
+.contact-card h2::before,
+.contact-directions h2::before {
+  width: 1.6rem;
+  height: 2px;
+  flex: 0 0 auto;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+  content: '';
 }
 
 .contact-detail-list,
@@ -627,20 +723,42 @@ p {
 }
 
 .contact-detail {
-  padding: var(--space-2);
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  column-gap: 0.85rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: calc(var(--radius) / 1.5);
-  background: rgb(0 0 0 / 24%);
-  transition: border-color 180ms ease, box-shadow 180ms ease;
+  background: linear-gradient(110deg, rgb(0 0 0 / 34%), rgb(255 255 255 / 1.5%));
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .contact-detail:hover {
   border-color: rgb(245 185 66 / 38%);
+  background: linear-gradient(110deg, rgb(245 185 66 / 4%), rgb(255 255 255 / 2%));
   box-shadow: 0 0 1rem rgb(245 185 66 / 8%);
+}
+
+.contact-detail-icon {
+  display: grid;
+  grid-row: 1 / 3;
+  grid-column: 1;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgb(245 185 66 / 22%);
+  border-radius: 50%;
+  background: rgb(245 185 66 / 5%);
+  color: var(--color-accent);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  box-shadow: inset 0 0 0.8rem rgb(245 185 66 / 4%);
 }
 
 .contact-detail strong {
   display: block;
+  grid-column: 2;
   margin-block-end: 0.35rem;
   color: var(--color-muted);
   font-size: 0.72rem;
@@ -649,6 +767,7 @@ p {
 }
 
 .contact-detail a {
+  grid-column: 2;
   color: var(--color-text);
   text-decoration: none;
 }
@@ -668,10 +787,12 @@ p {
   align-items: center;
   gap: 0.75rem;
   margin: 0;
-  padding: var(--space-2);
+  min-height: 4.5rem;
+  padding: 1rem 1.1rem;
   border: 1px solid var(--color-border);
   border-radius: calc(var(--radius) / 1.5);
-  background: rgb(0 0 0 / 24%);
+  background: linear-gradient(110deg, rgb(0 0 0 / 34%), rgb(255 255 255 / 1.5%));
+  font-weight: 600;
 }
 
 .contact-hours-row > span {
@@ -686,9 +807,19 @@ p {
   box-shadow: 0 0 0.55rem rgb(79 198 106 / 55%);
 }
 
+.contact-hours-row.is-open {
+  border-color: rgb(79 198 106 / 18%);
+  background: linear-gradient(110deg, rgb(79 198 106 / 5%), rgb(0 0 0 / 28%));
+}
+
 .contact-hours-row.is-closed > span {
   background: #ce2b37;
   box-shadow: 0 0 0.45rem rgb(206 43 55 / 45%);
+}
+
+.contact-hours-row.is-closed {
+  border-color: rgb(206 43 55 / 16%);
+  background: linear-gradient(110deg, rgb(206 43 55 / 4%), rgb(0 0 0 / 28%));
 }
 
 .contact-directions {
@@ -698,6 +829,9 @@ p {
   gap: var(--space-3);
   margin-block-start: var(--space-3);
   padding: var(--space-3) var(--space-4);
+  background:
+    radial-gradient(circle at 82% 50%, rgb(245 185 66 / 9%), transparent 24%),
+    linear-gradient(120deg, var(--color-surface), rgb(11 11 11 / 97%));
 }
 
 .contact-directions h2 {
@@ -705,14 +839,33 @@ p {
 }
 
 .contact-map-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 3rem;
+  overflow: hidden;
+  padding-inline: 1.4rem;
+  border: 1px solid #ffd978;
+  background: linear-gradient(135deg, #ffd978, var(--color-accent) 58%, #d49324);
+  box-shadow: 0 0.65rem 1.5rem rgb(245 185 66 / 13%), inset 0 1px 0 rgb(255 255 255 / 45%);
   text-decoration: none;
+  transition: box-shadow 180ms ease, filter 180ms ease, transform 180ms ease;
+}
+
+.contact-map-link:hover {
+  box-shadow: 0 0.85rem 1.8rem rgb(245 185 66 / 21%), inset 0 1px 0 rgb(255 255 255 / 55%);
+  filter: brightness(1.06);
+  transform: translateY(-2px);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .contact-detail {
+    transition: none;
+  }
+
+  .contact-card,
+  .contact-map-link {
     transition: none;
   }
 
