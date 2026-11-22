@@ -73,6 +73,11 @@ p {
   font-size: 1.25rem;
   font-weight: 700;
   text-decoration: none;
+  transition: filter 250ms ease;
+}
+
+.site-logo:hover {
+  filter: drop-shadow(0 0 0.35rem rgb(200 164 81 / 28%));
 }
 
 .site-crest-frame {
@@ -88,6 +93,7 @@ p {
   display: block;
   width: 100%;
   height: auto;
+  animation: crest-glow 9s ease-in-out infinite;
 }
 
 /* Wąski refleks przechodzi przez herb tylko raz na dziewięć sekund. */
@@ -105,6 +111,7 @@ p {
 
 .site-logo-name {
   position: relative;
+  animation: name-glow 9s ease-in-out 250ms infinite;
 }
 
 /* Druga, przezroczysta kopia napisu pokazuje wyłącznie przesuwający się refleks. */
@@ -170,7 +177,38 @@ p {
   }
 }
 
+/* Poświata rośnie tylko wtedy, gdy przez logo przechodzi refleks. */
+@keyframes crest-glow {
+  0%,
+  72%,
+  92%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 0 rgb(200 164 81 / 0%));
+  }
+
+  80%,
+  86% {
+    filter: brightness(1.12) drop-shadow(0 0 0.28rem rgb(240 216 138 / 38%));
+  }
+}
+
+@keyframes name-glow {
+  0%,
+  72%,
+  92%,
+  100% {
+    text-shadow: 0 0 0 rgb(240 216 138 / 0%);
+  }
+
+  80%,
+  86% {
+    text-shadow: 0 0 0.45rem rgb(240 216 138 / 42%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .site-crest,
+  .site-logo-name,
   .site-crest-frame::after,
   .site-logo-name::after {
     animation: none;
