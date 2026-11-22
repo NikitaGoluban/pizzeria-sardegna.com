@@ -51,7 +51,7 @@ export function ContactPage() {
         {/* Mapa pokazuje położenie Sardynii w przybliżonym fragmencie Europy Zachodniej. */}
         <span className="contact-europe-map" aria-hidden="true">
           <img src="/europe-blank-map.png" alt="" />
-          <span className="contact-sardinia-marker" />
+          <span className="contact-sardinia-highlight" />
           <span className="contact-map-label">Sardegna</span>
         </span>
       </PageIntro>

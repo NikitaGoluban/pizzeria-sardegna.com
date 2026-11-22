@@ -479,7 +479,7 @@ p {
     'eyebrow map'
     'title map'
     'intro map';
-  grid-template-columns: minmax(0, 1fr) 16rem;
+  grid-template-columns: minmax(0, 1fr) 18rem;
   column-gap: var(--space-4);
   align-items: center;
 }
@@ -501,12 +501,12 @@ p {
 .contact-europe-map {
   position: relative;
   grid-area: map;
-  width: 16rem;
-  min-height: 14rem;
+  width: 18rem;
+  min-height: 15.5rem;
   overflow: hidden;
   border: 1px solid rgb(245 185 66 / 18%);
   border-radius: var(--radius);
-  background: radial-gradient(circle at 52% 68%, rgb(245 185 66 / 13%), rgb(11 11 11 / 72%) 48%, #0b0b0b 78%);
+  background: radial-gradient(circle at 51% 76%, rgb(245 185 66 / 16%), rgb(11 11 11 / 72%) 46%, #0b0b0b 78%);
   box-shadow: inset 0 0 2.5rem rgb(0 0 0 / 45%), 0 0 1.5rem rgb(245 185 66 / 5%);
 }
 
@@ -521,32 +521,24 @@ p {
   transform: translateX(-46%);
 }
 
-.contact-sardinia-marker {
+.contact-sardinia-highlight {
   position: absolute;
-  top: 68%;
+  top: 76.5%;
   left: 51%;
-  width: 0.72rem;
-  height: 0.72rem;
-  border: 2px solid #fff4bd;
-  border-radius: 50%;
-  background: #ce2b37;
-  box-shadow: 0 0 0.75rem rgb(245 185 66 / 85%);
+  width: 1.15rem;
+  height: 2.2rem;
+  background: linear-gradient(165deg, #fff4bd 0%, var(--color-accent) 50%, #ce2b37 100%);
+  filter: drop-shadow(0 0 0.22rem rgb(255 244 189 / 90%)) drop-shadow(0 0 0.75rem rgb(245 185 66 / 85%));
   transform: translate(-50%, -50%);
-}
-
-.contact-sardinia-marker::after {
-  position: absolute;
-  inset: -0.45rem;
-  border: 1px solid rgb(245 185 66 / 65%);
-  border-radius: 50%;
-  content: '';
-  animation: map-marker-pulse 2.8s ease-out infinite;
+  -webkit-mask: url('/sardinia-map-source.svg') center / contain no-repeat;
+  mask: url('/sardinia-map-source.svg') center / contain no-repeat;
+  animation: sardinia-island-glow 2.8s ease-in-out infinite;
 }
 
 .contact-map-label {
   position: absolute;
-  top: calc(68% - 0.65rem);
-  left: calc(51% + 0.7rem);
+  top: calc(76.5% - 0.75rem);
+  left: calc(51% + 1rem);
   padding: 0.15rem 0.35rem;
   border: 1px solid rgb(245 185 66 / 22%);
   border-radius: 999px;
@@ -559,16 +551,17 @@ p {
   white-space: nowrap;
 }
 
-@keyframes map-marker-pulse {
+@keyframes sardinia-island-glow {
   0% {
-    opacity: 0.9;
-    transform: scale(0.55);
+    filter: drop-shadow(0 0 0.15rem rgb(255 244 189 / 65%)) drop-shadow(0 0 0.4rem rgb(245 185 66 / 55%));
   }
 
-  75%,
+  50% {
+    filter: drop-shadow(0 0 0.3rem rgb(255 244 189 / 100%)) drop-shadow(0 0 1rem rgb(245 185 66 / 95%));
+  }
+
   100% {
-    opacity: 0;
-    transform: scale(1.55);
+    filter: drop-shadow(0 0 0.15rem rgb(255 244 189 / 65%)) drop-shadow(0 0 0.4rem rgb(245 185 66 / 55%));
   }
 }
 
@@ -706,7 +699,7 @@ p {
     transition: none;
   }
 
-  .contact-sardinia-marker::after {
+  .contact-sardinia-highlight {
     animation: none;
   }
 }
@@ -1008,8 +1001,8 @@ p {
   }
 
   .contact-europe-map {
-    width: min(100%, 16rem);
-    min-height: 13rem;
+    width: min(100%, 18rem);
+    min-height: 15rem;
     margin-block-start: var(--space-2);
     justify-self: center;
   }
