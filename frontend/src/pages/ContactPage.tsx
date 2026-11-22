@@ -9,8 +9,9 @@ Jak jest zbudowany:
 2. usePageMeta ustawia przetłumaczony tytuł i opis karty przeglądarki.
 3. PageShell zapewnia główny element main i wspólne odstępy.
 4. PageIntro pokazuje tytuł i krótki opis strony.
-5. Section dzieli treść na kontakt, godziny otwarcia i mapę.
-6. Link tel uruchamia telefon, a link do Google Maps otwiera zewnętrzną mapę.
+5. Dwie karty dzielą treść na dane kontaktowe oraz godziny otwarcia.
+6. Dolna karta prowadzi do Google Maps, a link tel uruchamia telefon.
+7. Dekoracyjna maska SVG pokazuje kontur Sardynii obok wprowadzenia.
 
 Gdzie jest używany:
 router.tsx wyświetla ContactPage pod adresem /contact.html.
@@ -45,8 +46,13 @@ export function ContactPage() {
 
   return (
     <PageShell>
-      <PageIntro eyebrow={translation.t('contact.eyebrow')} title={translation.t('contact.title')}>
-        <p>{translation.t('contact.intro')}</p>
+      <PageIntro className="contact-page-intro" eyebrow={translation.t('contact.eyebrow')} title={translation.t('contact.title')}>
+        <p className="contact-intro-text">{translation.t('contact.intro')}</p>
+        {/* Kontur Sardynii jest dekoracją symbolizującą pochodzenie kuchni. */}
+        <span className="contact-sardinia-sketch" aria-hidden="true">
+          <span className="contact-sardinia-shape" />
+          <span className="contact-sardinia-label">Sardegna</span>
+        </span>
       </PageIntro>
 
       {/* Dwie główne karty ustawiają kontakt i godziny obok siebie na dużym ekranie. */}
@@ -89,9 +95,10 @@ Pełne wyjaśnienie pliku:
 1. ContactPage jest powiązany w router.tsx z adresem /contact.html.
 2. usePageMeta ustawia tytuł Contact — Pizzeria Sardegna.
 3. PageIntro wyjaśnia, że strona służy do planowania wizyty i rezerwacji.
-4. Contact methods pokazuje telefon i adres restauracji.
-5. Opening hours oraz Find us pokazują godziny otwarcia i link do mapy.
-6. PageShell zapewnia taki sam układ jak na pozostałych podstronach.
+4. contact-card-grid ustawia telefon z adresem oraz godziny otwarcia w dwóch kartach.
+5. contact-directions pokazuje osobną kartę z przyciskiem Google Maps.
+6. contact-sardinia-sketch jest dekoracyjnym konturem wyspy Sardynii.
+7. PageShell zapewnia taki sam układ jak na pozostałych podstronach.
 
 Zastosowanie praktyczne:
 To strona otwierana po kliknięciu Contact w menu. Gość znajdzie tutaj telefon, adres,

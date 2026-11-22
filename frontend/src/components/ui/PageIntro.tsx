@@ -8,12 +8,14 @@ Dane otrzymywane przez props:
 - title jest wymaganym głównym tytułem h1;
 - eyebrow jest opcjonalną małą etykietą nad tytułem;
 - children jest opcjonalną dodatkową treścią, na przykład opisem lub przyciskami.
+- className pozwala konkretnej stronie dodać własny układ bez zmiany pozostałych stron.
 
 Jak działa:
 1. TypeScript sprawdza dane według PageIntroProps.
-2. showEyebrow używa prostego if i zwraca null, gdy etykiety nie podano.
-3. props.title trafia do h1.
-4. props.children trafia pod tytuł.
+2. className łączy wspólną klasę page-intro z opcjonalną klasą konkretnej strony.
+3. showEyebrow używa prostego if i zwraca null, gdy etykiety nie podano.
+4. props.title trafia do h1.
+5. props.children trafia pod tytuł.
 
 Dlaczego komponent pomaga:
 Każda podstrona ma spójny tytuł i układ początku, ale może przekazać własne teksty.
@@ -29,6 +31,7 @@ interface PageIntroProps {
   eyebrow?: string
   title: string
   children?: ReactNode
+  className?: string
 }
 
 function showEyebrow(props: PageIntroProps) {
@@ -40,8 +43,10 @@ function showEyebrow(props: PageIntroProps) {
 }
 
 export function PageIntro(props: PageIntroProps) {
+  const className = props.className === undefined ? 'page-intro' : `page-intro ${props.className}`
+
   return (
-    <header className="page-intro">
+    <header className={className}>
       {showEyebrow(props)}
       <h1>{props.title}</h1>
       {props.children}
