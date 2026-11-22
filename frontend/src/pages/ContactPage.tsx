@@ -26,9 +26,10 @@ godziny otwarcia i link, który otwiera trasę w Google Maps.
 import { PageIntro } from '../components/ui/PageIntro'
 import { useTranslation } from 'react-i18next'
 import { PageShell } from '../components/ui/PageShell'
-import { Section } from '../components/ui/Section'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { getLocaleForLanguage } from '../i18n'
+
+const directionsUrl = 'https://www.google.com/maps/search/?api=1&query=Pizzeria+Sardegna+Stadtallendorf'
 
 export function ContactPage() {
   const translation = useTranslation()
@@ -47,17 +48,37 @@ export function ContactPage() {
       <PageIntro eyebrow={translation.t('contact.eyebrow')} title={translation.t('contact.title')}>
         <p>{translation.t('contact.intro')}</p>
       </PageIntro>
-      <Section title={translation.t('contact.methodsTitle')}>
-        <p><strong>{translation.t('contact.phone')}</strong> <a href="tel:+4964284474948">+49 6428 4474948</a></p>
-        <p><strong>{translation.t('contact.address')}</strong> Stadionweg 2, 35260 Stadtallendorf</p>
-      </Section>
-      <Section title={translation.t('contact.hoursTitle')}>
-        <p>{translation.t('contact.open')}</p>
-        <p>{translation.t('contact.closed')}</p>
-      </Section>
-      <Section title={translation.t('contact.directionsTitle')}>
-        <a href="https://www.google.com/maps/search/?api=1&query=Pizzeria+Sardegna+Stadtallendorf" target="_blank" rel="noreferrer">{translation.t('contact.directions')}</a>
-      </Section>
+
+      {/* Dwie główne karty ustawiają kontakt i godziny obok siebie na dużym ekranie. */}
+      <div className="contact-card-grid">
+        <section className="contact-card" aria-labelledby="contact-details-title">
+          <h2 id="contact-details-title">{translation.t('contact.methodsTitle')}</h2>
+          <div className="contact-detail-list">
+            <div className="contact-detail">
+              <strong>{translation.t('contact.phone')}</strong>
+              <a className="contact-primary-link" href="tel:+4964284474948">+49 6428 4474948</a>
+            </div>
+            <div className="contact-detail">
+              <strong>{translation.t('contact.address')}</strong>
+              <a href={directionsUrl} target="_blank" rel="noreferrer">Stadionweg 2<br />35260 Stadtallendorf</a>
+            </div>
+          </div>
+        </section>
+
+        <section className="contact-card" aria-labelledby="contact-hours-title">
+          <h2 id="contact-hours-title">{translation.t('contact.hoursTitle')}</h2>
+          <div className="contact-hours-list">
+            <p className="contact-hours-row is-open"><span aria-hidden="true" />{translation.t('contact.open')}</p>
+            <p className="contact-hours-row is-closed"><span aria-hidden="true" />{translation.t('contact.closed')}</p>
+          </div>
+        </section>
+      </div>
+
+      {/* Szeroka dolna karta prowadzi bezpośrednio do planowania trasy. */}
+      <section className="contact-directions" aria-labelledby="contact-directions-title">
+        <h2 id="contact-directions-title">{translation.t('contact.directionsTitle')}</h2>
+        <a className="button contact-map-link" href={directionsUrl} target="_blank" rel="noreferrer">{translation.t('contact.directions')}</a>
+      </section>
     </PageShell>
   )
 }
