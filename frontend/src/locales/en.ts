@@ -4,6 +4,7 @@ export const enTranslation = {
   common: {
     skipToMain: 'Skip to main content',
     logoHomeLabel: 'Pizzeria Sardegna — Home page',
+    brandTagline: 'Sardinian cuisine · Simone Meloni · Stadtallendorf',
     navigation: {
       label: 'Main navigation',
       home: 'Home',

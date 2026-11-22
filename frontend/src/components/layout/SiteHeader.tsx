@@ -53,9 +53,12 @@ export function SiteHeader() {
           </span>
           <span className="site-logo-name">
             <span className="site-logo-prefix">Pizzeria</span>
-            {/* data-label dostarcza nazwę Sardegna dekoracyjnej warstwie błysku w CSS. */}
-            <span className="site-logo-sardegna" data-label="Sardegna">Sardegna</span>
-            <span className="site-logo-underline" aria-hidden="true" />
+            <span className="site-logo-mark">
+              {/* data-label dostarcza nazwę Sardegna dekoracyjnej warstwie błysku w CSS. */}
+              <span className="site-logo-sardegna" data-label="Sardegna">Sardegna</span>
+              <span className="site-logo-underline" aria-hidden="true" />
+            </span>
+            <span className="site-logo-tagline">{translation.t('common.brandTagline')}</span>
           </span>
         </Link>
 

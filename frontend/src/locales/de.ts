@@ -8,6 +8,7 @@ export const deTranslation = {
   common: {
     skipToMain: 'Zum Hauptinhalt springen',
     logoHomeLabel: 'Pizzeria Sardegna — Startseite',
+    brandTagline: 'Sardische Küche · Simone Meloni · Stadtallendorf',
     navigation: {
       label: 'Hauptnavigation',
       home: 'Startseite',

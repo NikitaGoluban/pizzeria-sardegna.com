@@ -149,6 +149,11 @@ p {
   animation: name-glow 9s ease-in-out 250ms infinite;
 }
 
+.site-logo-mark {
+  display: grid;
+  width: max-content;
+}
+
 /* Druga, przezroczysta kopia słowa Sardegna pokazuje tylko przesuwający się refleks. */
 .site-logo-sardegna::after {
   position: absolute;
@@ -185,6 +190,16 @@ p {
   background: linear-gradient(90deg, transparent, rgb(255 255 255 / 90%), transparent);
   opacity: 0;
   animation: italian-line-shine 9s ease-in-out 500ms infinite;
+}
+
+.site-logo-tagline {
+  margin-block-start: 0.3rem;
+  color: var(--color-muted);
+  font-size: 0.53rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 @keyframes italian-line-shine {
