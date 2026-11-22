@@ -90,7 +90,7 @@ p {
 .site-crest-frame {
   position: relative;
   display: block;
-  width: 3rem;
+  width: 3.75rem;
   flex: 0 0 auto;
   overflow: hidden;
   clip-path: polygon(3% 2%, 97% 2%, 97% 84%, 82% 91%, 50% 98%, 18% 91%, 3% 84%);
