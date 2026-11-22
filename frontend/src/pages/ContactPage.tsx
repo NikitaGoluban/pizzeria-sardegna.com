@@ -48,10 +48,11 @@ export function ContactPage() {
     <PageShell>
       <PageIntro className="contact-page-intro" eyebrow={translation.t('contact.eyebrow')} title={translation.t('contact.title')}>
         <p className="contact-intro-text">{translation.t('contact.intro')}</p>
-        {/* Kontur Sardynii jest dekoracją symbolizującą pochodzenie kuchni. */}
-        <span className="contact-sardinia-sketch" aria-hidden="true">
-          <span className="contact-sardinia-shape" />
-          <span className="contact-sardinia-label">Sardegna</span>
+        {/* Mapa pokazuje położenie Sardynii w przybliżonym fragmencie Europy Zachodniej. */}
+        <span className="contact-europe-map" aria-hidden="true">
+          <img src="/europe-blank-map.png" alt="" />
+          <span className="contact-sardinia-marker" />
+          <span className="contact-map-label">Sardegna</span>
         </span>
       </PageIntro>
 
@@ -97,7 +98,7 @@ Pełne wyjaśnienie pliku:
 3. PageIntro wyjaśnia, że strona służy do planowania wizyty i rezerwacji.
 4. contact-card-grid ustawia telefon z adresem oraz godziny otwarcia w dwóch kartach.
 5. contact-directions pokazuje osobną kartę z przyciskiem Google Maps.
-6. contact-sardinia-sketch jest dekoracyjnym konturem wyspy Sardynii.
+6. contact-europe-map pokazuje przybliżony fragment Europy z wyróżnioną Sardynią.
 7. PageShell zapewnia taki sam układ jak na pozostałych podstronach.
 
 Zastosowanie praktyczne:

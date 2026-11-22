@@ -1,9 +1,9 @@
 # Asset sources
 
-## Sardinia map outline
+## Europe map
 
-- Local file: `sardinia-map-source.svg`
-- Source: [Map of region of Sardinia, Italy.svg](https://commons.wikimedia.org/wiki/File:Map_of_region_of_Sardinia,_Italy.svg)
-- Author: Vonvikken
+- Local file: `europe-blank-map.png`
+- Source: [Europe blank map.png](https://commons.wikimedia.org/wiki/File:Europe_blank_map.png)
+- Author: Wiki-vr
 - License: Public domain
-- Use on this site: the SVG provides the geographic mask for the decorative Sardinia outline. The visible colours and presentation are defined locally in `src/styles/global.css`.
+- Use on this site: CSS crops the map to Western and Southern Europe and places a decorative marker over Sardinia. The visible colours and presentation are defined locally in `src/styles/global.css`.

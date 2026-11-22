@@ -479,7 +479,7 @@ p {
     'eyebrow map'
     'title map'
     'intro map';
-  grid-template-columns: minmax(0, 1fr) 11rem;
+  grid-template-columns: minmax(0, 1fr) 16rem;
   column-gap: var(--space-4);
   align-items: center;
 }
@@ -498,44 +498,78 @@ p {
   align-self: start;
 }
 
-.contact-sardinia-sketch {
+.contact-europe-map {
   position: relative;
   grid-area: map;
-  display: grid;
-  place-items: center;
-  width: 11rem;
-  min-height: 15rem;
+  width: 16rem;
+  min-height: 14rem;
   overflow: hidden;
   border: 1px solid rgb(245 185 66 / 18%);
-  border-radius: 50%;
-  background:
-    linear-gradient(rgb(245 185 66 / 5%) 1px, transparent 1px) 0 0 / 100% 2rem,
-    linear-gradient(90deg, rgb(245 185 66 / 5%) 1px, transparent 1px) 0 0 / 2rem 100%,
-    radial-gradient(circle, rgb(245 185 66 / 8%), transparent 68%);
+  border-radius: var(--radius);
+  background: radial-gradient(circle at 52% 68%, rgb(245 185 66 / 13%), rgb(11 11 11 / 72%) 48%, #0b0b0b 78%);
   box-shadow: inset 0 0 2.5rem rgb(0 0 0 / 45%), 0 0 1.5rem rgb(245 185 66 / 5%);
 }
 
-.contact-sardinia-shape {
-  width: 7rem;
-  height: 12.75rem;
-  background: linear-gradient(160deg, #fff1ae 0%, var(--color-accent) 58%, #ce2b37 100%);
-  filter: drop-shadow(0 0 0.45rem rgb(245 185 66 / 28%));
-  opacity: 0.92;
-  -webkit-mask: url('/sardinia-map-source.svg') center / contain no-repeat;
-  mask: url('/sardinia-map-source.svg') center / contain no-repeat;
+.contact-europe-map > img {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 46%;
+  width: 210%;
+  max-width: none;
+  filter: grayscale(1) invert(0.88) sepia(0.35) saturate(1.5) hue-rotate(350deg) brightness(0.72);
+  opacity: 0.48;
+  transform: translateX(-46%);
 }
 
-.contact-sardinia-label {
+.contact-sardinia-marker {
   position: absolute;
-  right: 0;
-  bottom: 1rem;
-  left: 0;
-  color: var(--color-muted);
+  top: 68%;
+  left: 51%;
+  width: 0.72rem;
+  height: 0.72rem;
+  border: 2px solid #fff4bd;
+  border-radius: 50%;
+  background: #ce2b37;
+  box-shadow: 0 0 0.75rem rgb(245 185 66 / 85%);
+  transform: translate(-50%, -50%);
+}
+
+.contact-sardinia-marker::after {
+  position: absolute;
+  inset: -0.45rem;
+  border: 1px solid rgb(245 185 66 / 65%);
+  border-radius: 50%;
+  content: '';
+  animation: map-marker-pulse 2.8s ease-out infinite;
+}
+
+.contact-map-label {
+  position: absolute;
+  top: calc(68% - 0.65rem);
+  left: calc(51% + 0.7rem);
+  padding: 0.15rem 0.35rem;
+  border: 1px solid rgb(245 185 66 / 22%);
+  border-radius: 999px;
+  background: rgb(11 11 11 / 82%);
+  color: var(--color-accent);
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 0.72rem;
   font-style: italic;
-  letter-spacing: 0.12em;
-  text-align: center;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+@keyframes map-marker-pulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.55);
+  }
+
+  75%,
+  100% {
+    opacity: 0;
+    transform: scale(1.55);
+  }
 }
 
 .contact-card-grid {
@@ -670,6 +704,10 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .contact-detail {
     transition: none;
+  }
+
+  .contact-sardinia-marker::after {
+    animation: none;
   }
 }
 
@@ -969,16 +1007,11 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .contact-sardinia-sketch {
+  .contact-europe-map {
     width: min(100%, 16rem);
     min-height: 13rem;
     margin-block-start: var(--space-2);
     justify-self: center;
-  }
-
-  .contact-sardinia-shape {
-    width: 6rem;
-    height: 11rem;
   }
 
   .contact-card-grid {
