@@ -114,7 +114,7 @@ export const deTranslation = {
       description: 'Kontaktieren Sie Pizzeria Sardegna in Stadtallendorf, reservieren Sie einen Tisch oder planen Sie Ihren Besuch.',
     },
     eyebrow: 'Kontakt',
-    title: 'Besuchen Sie Pizzeria Sardegna',
+    title: 'Besuchen Sie Pizzeria Sardegna in Stadtallendorf, Hessen, Deutschland',
     intro: 'Rufen Sie uns an, um einen Tisch zu reservieren, nach der Speisekarte zu fragen oder Ihren nächsten Besuch zu planen.',
     methodsTitle: 'Kontaktmöglichkeiten',
     phone: 'Telefon:',

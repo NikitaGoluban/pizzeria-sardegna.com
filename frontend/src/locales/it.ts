@@ -110,7 +110,7 @@ export const itTranslation = {
       description: 'Contattate la Pizzeria Sardegna a Stadtallendorf, prenotate un tavolo o organizzate la vostra visita.',
     },
     eyebrow: 'Contatti',
-    title: 'Visitate la Pizzeria Sardegna',
+    title: 'Visitate la Pizzeria Sardegna a Stadtallendorf, Assia, Germania',
     intro: 'Chiamateci per prenotare un tavolo, chiedere informazioni sul menù o organizzare la vostra prossima visita.',
     methodsTitle: 'Recapiti',
     phone: 'Telefono:',

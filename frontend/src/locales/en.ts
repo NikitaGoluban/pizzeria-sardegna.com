@@ -110,7 +110,7 @@ export const enTranslation = {
       description: 'Contact Pizzeria Sardegna in Stadtallendorf, reserve a table or plan your visit.',
     },
     eyebrow: 'Contact',
-    title: 'Visit Pizzeria Sardegna',
+    title: 'Visit Pizzeria Sardegna in Stadtallendorf, Hessen, Germany',
     intro: 'Call us to reserve a table, ask about the menu or plan your next visit.',
     methodsTitle: 'Contact details',
     phone: 'Phone:',
