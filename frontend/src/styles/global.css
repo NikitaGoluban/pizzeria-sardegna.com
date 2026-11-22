@@ -118,11 +118,36 @@ p {
 
 .site-logo-name {
   position: relative;
+  display: grid;
+  justify-items: start;
+  line-height: 1;
+}
+
+.site-logo-prefix {
+  margin: 0 0 0.08rem 0.12rem;
+  color: var(--color-muted);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.site-logo-sardegna {
+  position: relative;
+  background: linear-gradient(180deg, #fff3bc 0%, #f5b942 52%, #c88f26 100%);
+  background-clip: text;
+  color: transparent;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: name-glow 9s ease-in-out 250ms infinite;
 }
 
-/* Druga, przezroczysta kopia napisu pokazuje wyłącznie przesuwający się refleks. */
-.site-logo-name::after {
+/* Druga, przezroczysta kopia słowa Sardegna pokazuje tylko przesuwający się refleks. */
+.site-logo-sardegna::after {
   position: absolute;
   inset: 0;
   content: attr(data-label);
@@ -136,6 +161,28 @@ p {
   -webkit-text-fill-color: transparent;
   animation: name-shine 9s ease-in-out 250ms infinite;
   pointer-events: none;
+}
+
+.site-logo-underline {
+  position: relative;
+  width: 72%;
+  height: 1px;
+  margin-block-start: 0.2rem;
+  background: linear-gradient(90deg, var(--color-accent), rgb(245 185 66 / 25%));
+  box-shadow: 0 0 0.3rem rgb(245 185 66 / 32%);
+}
+
+.site-logo-underline::after {
+  position: absolute;
+  top: 50%;
+  right: -0.08rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  content: '';
+  background: var(--color-accent);
+  box-shadow: 0 0 0.35rem rgb(245 185 66 / 65%);
+  transform: translateY(-50%);
 }
 
 @keyframes crest-shine {
@@ -215,9 +262,9 @@ p {
 
 @media (prefers-reduced-motion: reduce) {
   .site-crest,
-  .site-logo-name,
+  .site-logo-sardegna,
   .site-crest-frame::after,
-  .site-logo-name::after {
+  .site-logo-sardegna::after {
     animation: none;
   }
 }

@@ -51,8 +51,12 @@ export function SiteHeader() {
           <span className="site-crest-frame" aria-hidden="true">
             <img className="site-crest" src="/sardinia-crest.svg" alt="" />
           </span>
-          {/* data-label dostarcza tę samą nazwę dekoracyjnej warstwie błysku w CSS. */}
-          <span className="site-logo-name" data-label="Pizzeria Sardegna">Pizzeria Sardegna</span>
+          <span className="site-logo-name">
+            <span className="site-logo-prefix">Pizzeria</span>
+            {/* data-label dostarcza nazwę Sardegna dekoracyjnej warstwie błysku w CSS. */}
+            <span className="site-logo-sardegna" data-label="Sardegna">Sardegna</span>
+            <span className="site-logo-underline" aria-hidden="true" />
+          </span>
         </Link>
 
         <div className="header-actions-layout">
