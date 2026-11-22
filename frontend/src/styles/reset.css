@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+Pełne wyjaśnienie pliku:
+
+1. Uniwersalny selektor oraz pseudoelementy ustawiają box-sizing: border-box.
+   Dzięki temu padding i border są wliczane do zadanej szerokości elementu.
+2. scroll-behavior: smooth tworzy płynne przejście do kotwic na stronie.
+3. body otrzymuje margin: 0, aby usunąć domyślny margines przeglądarki.
+4. Obrazy i SVG są blokami i nie mogą przekroczyć szerokości kontenera.
+5. Przyciski, pola formularzy i select dziedziczą font strony zamiast używać osobnego fontu systemowego.
+6. Reset nie projektuje wyglądu strony; tworzy przewidywalny punkt początkowy dla global.css.
+
+Zastosowanie praktyczne:
+Ten plik sprawia, że podstawowe elementy zachowują się podobnie w różnych przeglądarkach.
+Dzięki temu później stylujemy stronę od przewidywalnego punktu zamiast naprawiać różnice.
+*/

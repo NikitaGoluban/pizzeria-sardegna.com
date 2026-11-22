@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{HTTP_HOST} ^(?:www\.)?seven-one-test2\.pl$ [NC]
+  RewriteRule ^ https://pizzeria-sardegna.com%{REQUEST_URI} [R=301,L,NE]
+
+  RewriteRule ^index\.html$ - [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Pełne wyjaśnienie pliku:
+#
+# 1. mod_rewrite pozwala serwerowi Apache zmieniać sposób obsługi adresów.
+# 2. Wejścia przez testową domenę seven-one-test2.pl otrzymują stałe przekierowanie 301
+#    do tej samej ścieżki w docelowej domenie pizzeria-sardegna.com.
+# 3. Istniejące pliki, na przykład obrazy i pliki CSS, są zwracane normalnie.
+# 4. Istniejące katalogi również nie są przekierowywane.
+# 5. Każdy pozostały adres otrzymuje index.html, a właściwą stronę wybiera React Router.
+#
+# Zastosowanie praktyczne:
+# Stary adres https://seven-one-test2.pl/menu.html prowadzi do
+# https://pizzeria-sardegna.com/menu.html, a bezpośrednie otwarcie tras aplikacji nie zwraca błędu 404.

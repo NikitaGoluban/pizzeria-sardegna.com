@@ -1,0 +1,18 @@
+@import './tokens.css';
+@import './reset.css';
+@import './global.css';
+
+/*
+Pełne wyjaśnienie pliku:
+
+1. Ten plik jest głównym punktem wejścia CSS importowanym przez main.tsx.
+2. tokens.css jest wczytywany pierwszy, aby zmienne CSS były dostępne dla kolejnych plików.
+3. reset.css usuwa niespójne domyślne ustawienia przeglądarek.
+4. global.css jest wczytywany na końcu i korzysta ze zmiennych oraz resetu.
+5. Kolejność importów ma znaczenie, ponieważ późniejsze reguły mogą nadpisywać wcześniejsze.
+6. Dzięki temu main.tsx musi importować tylko jeden plik stylów.
+
+Zastosowanie praktyczne:
+To główne wejście do wszystkich stylów. main.tsx importuje tylko index.css, a ten plik
+włącza we właściwej kolejności zmienne, reset przeglądarki i wygląd całej witryny.
+*/

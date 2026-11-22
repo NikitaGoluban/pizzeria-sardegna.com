@@ -1,0 +1,32 @@
+:root {
+  /* Design tokens keep repeated visual decisions in one place. */
+  --color-background: #0b0b0b;
+  --color-surface: #151515;
+  --color-text: #f5f5f5;
+  --color-muted: #b9b9b9;
+  --color-accent: #f5b942;
+  --color-border: rgb(255 255 255 / 12%);
+  --content-width: 72rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --radius: 0.75rem;
+}
+
+/*
+Pełne wyjaśnienie pliku:
+
+1. Selektor :root reprezentuje najwyższy element dokumentu i udostępnia zmienne globalnie.
+2. Zmienne zaczynające się od --color przechowują kolory tła, powierzchni, tekstu, akcentu i obramowania.
+3. --content-width określa maksymalną szerokość głównej treści.
+4. --space-1 do --space-5 tworzą spójną skalę odstępów.
+5. --radius przechowuje wspólne zaokrąglenie narożników.
+6. Inne pliki pobierają wartości za pomocą var(--nazwa-zmiennej).
+7. Zmiana tokena aktualizuje wszystkie miejsca korzystające z niego, bez wyszukiwania wielu reguł CSS.
+
+Zastosowanie praktyczne:
+Tutaj sterujemy podstawowym motywem witryny. Zmiana jednego koloru, odstępu albo maksymalnej
+szerokości wpływa na wszystkie komponenty, które korzystają z odpowiedniej zmiennej.
+*/

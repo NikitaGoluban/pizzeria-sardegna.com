@@ -1,0 +1,10 @@
+# Roboty mogą indeksować publiczne strony witryny.
+User-agent: *
+Allow: /
+
+# Mapa pomaga robotom znaleźć najważniejsze adresy.
+Sitemap: https://pizzeria-sardegna.com/sitemap.xml
+
+# Zastosowanie praktyczne:
+# Ten plik leży w katalogu publicznym i po buildzie jest dostępny pod /robots.txt.
+# Wyszukiwarki mogą dzięki niemu poznać zasady indeksowania oraz adres sitemap.xml.
