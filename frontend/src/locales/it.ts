@@ -41,12 +41,17 @@ export const itTranslation = {
       schemaName: 'Pizzeria Sardegna Stadtallendorf',
     },
     eyebrow: 'Ristorante italiano · Stadtallendorf',
-    title: 'Pizzeria Sardegna',
-    intro: 'Sapori italiani, piatti preparati al momento e un ambiente rilassato per gustare pizza, pasta e molto altro.',
+    title: 'Gentile ospite',
+    paperWelcome: {
+      greeting: 'benvenuto nella nostra Pizzeria Sardegna.',
+      stay: 'Le auguriamo una piacevole permanenza, perché qui lo chef cucina ancora personalmente!',
+      appetite: 'Il team della Pizzeria Sardegna le augura buon appetito!',
+      signature: 'Simone Meloni',
+    },
     call: 'Chiama: +49 6428 4474948',
     viewMenu: 'Scopri il menù',
     welcome: {
-      title: 'Benvenuti alla Pizzeria Sardegna',
+      title: 'Organizza la tua visita',
       firstText: 'A Stadtallendorf, la Pizzeria Sardegna unisce l’atmosfera italiana a una calorosa ospitalità.',
       secondText: 'La nostra cucina propone pizza, pasta, insalate e altri piatti amati, ideali per momenti piacevoli con famiglia e amici.',
       hours: 'Orari di apertura',
@@ -125,8 +130,12 @@ export const itTranslation = {
     hoursTitle: 'Orari di apertura',
     open: 'Martedì–Domenica: 17:00–23:30',
     closed: 'Lunedì: Chiuso',
+    serviceTitle: 'Servizio',
+    dineIn: 'Al tavolo · Da asporto',
+    reservations: 'Prenotazioni disponibili',
     directionsTitle: 'Come raggiungerci',
     directions: 'Apri il percorso in Google Maps ↗',
+    wazeDirections: 'Apri il percorso in Waze ↗',
   },
   privacy: {
     meta: {

@@ -45,12 +45,17 @@ export const deTranslation = {
       schemaName: 'Pizzeria Sardegna Stadtallendorf',
     },
     eyebrow: 'Italienisches Restaurant · Stadtallendorf',
-    title: 'Pizzeria Sardegna',
-    intro: 'Italienischer Genuss, frisch zubereitete Gerichte und ein entspannter Ort für Pizza, Pasta und mehr.',
+    title: 'Sehr geehrter Gast',
+    paperWelcome: {
+      greeting: 'herzlich Willkommen in unserer Pizzeria Sardegna.',
+      stay: 'Wir wünschen Ihnen einen angenehmen Aufenthalt, denn hier kocht der Chef noch selbst!',
+      appetite: 'Das Team vom Pizzeria Sardegna wünscht Ihnen einen guten Appetit!',
+      signature: 'Simone Meloni',
+    },
     call: 'Anrufen: +49 6428 4474948',
     viewMenu: 'Speisekarte ansehen',
     welcome: {
-      title: 'Willkommen bei Pizzeria Sardegna',
+      title: 'Ihr Besuch',
       firstText: 'In Stadtallendorf verbindet die Pizzeria Sardegna italienisches Ambiente mit herzlicher Gastfreundschaft.',
       secondText: 'Unsere Küche serviert Pizza, Pasta, Salate und weitere Lieblingsgerichte für entspannte Stunden mit Familie und Freunden.',
       hours: 'Öffnungszeiten',
@@ -129,8 +134,12 @@ export const deTranslation = {
     hoursTitle: 'Öffnungszeiten',
     open: 'Dienstag–Sonntag: 17:00–23:30',
     closed: 'Montag: Ruhetag',
+    serviceTitle: 'Service',
+    dineIn: 'Vor Ort · Zum Mitnehmen',
+    reservations: 'Reservierungen willkommen',
     directionsTitle: 'Anfahrt',
     directions: 'Route in Google Maps öffnen ↗',
+    wazeDirections: 'Route in Waze öffnen ↗',
   },
   privacy: {
     meta: {

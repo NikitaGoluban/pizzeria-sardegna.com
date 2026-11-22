@@ -41,12 +41,17 @@ export const enTranslation = {
       schemaName: 'Pizzeria Sardegna Stadtallendorf',
     },
     eyebrow: 'Italian restaurant · Stadtallendorf',
-    title: 'Pizzeria Sardegna',
-    intro: 'Italian flavours, freshly prepared dishes and a relaxed place for pizza, pasta and more.',
+    title: 'Dear guest',
+    paperWelcome: {
+      greeting: 'a warm welcome to our Pizzeria Sardegna.',
+      stay: 'We wish you a pleasant stay, because here the chef still cooks himself!',
+      appetite: 'The Pizzeria Sardegna team wishes you a good appetite!',
+      signature: 'Simone Meloni',
+    },
     call: 'Call: +49 6428 4474948',
     viewMenu: 'View our menu',
     welcome: {
-      title: 'Welcome to Pizzeria Sardegna',
+      title: 'Plan your visit',
       firstText: 'In Stadtallendorf, Pizzeria Sardegna combines Italian atmosphere with warm hospitality.',
       secondText: 'Our kitchen serves pizza, pasta, salads and other favourites for relaxed moments with family and friends.',
       hours: 'Opening hours',
@@ -125,8 +130,12 @@ export const enTranslation = {
     hoursTitle: 'Opening hours',
     open: 'Tuesday–Sunday: 17:00–23:30',
     closed: 'Monday: Closed',
+    serviceTitle: 'Service',
+    dineIn: 'Dine in · Takeaway',
+    reservations: 'Reservations welcome',
     directionsTitle: 'Find us',
     directions: 'Open directions in Google Maps ↗',
+    wazeDirections: 'Open directions in Waze ↗',
   },
   privacy: {
     meta: {

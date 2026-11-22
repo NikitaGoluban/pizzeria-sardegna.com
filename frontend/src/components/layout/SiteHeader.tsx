@@ -31,7 +31,7 @@ import { useEffect, useState, type MouseEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-// SiteNavigation zawiera główne menu: Home, Menu, About us, Gallery i Contact.
+// SiteNavigation zawiera główne menu: Home, About us, Gallery i Contact.
 import { SiteNavigation } from './SiteNavigation'
 import { LanguageSwitcher } from './LanguageSwitcher'
 

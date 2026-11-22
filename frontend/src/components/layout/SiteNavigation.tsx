@@ -21,8 +21,8 @@ Dlaczego osobny plik pomaga:
 Dodanie lub zmiana linku nie wymaga edytowania całego nagłówka.
 
 Przykład:
-Gdy aktualny adres to /menu.html, NavLink Menu otrzymuje klasę is-active.
-NavLink Contact jej nie otrzymuje, ponieważ prowadzi do innego adresu. Po zmianie
+Gdy aktualny adres to /contact.html, NavLink Contact otrzymuje klasę is-active.
+NavLink Gallery jej nie otrzymuje, ponieważ prowadzi do innego adresu. Po zmianie
 języka adres pozostaje ten sam, a zmieniają się tylko podpisy linków.
 */
 
@@ -56,9 +56,6 @@ export function SiteNavigation() {
         <li>
           {/* to określa adres, a className wywołuje funkcję wybierającą klasę CSS. */}
           <NavLink to="/" end className={getNavigationLinkClassName}>{translation.t('common.navigation.home')}</NavLink>
-        </li>
-        <li>
-          <NavLink to="/menu.html" className={getNavigationLinkClassName}>{translation.t('common.navigation.menu')}</NavLink>
         </li>
         <li>
           <NavLink to="/about.html" className={getNavigationLinkClassName}>{translation.t('common.navigation.about')}</NavLink>
@@ -104,7 +101,7 @@ Pełne wyjaśnienie pliku:
 
 6. Właściwość to:
    Każdy NavLink ma właściwość to określającą adres docelowy.
-   Przykładowo to="/menu.html" otwiera menu, a to="/gallery.html" galerię.
+   Przykładowo to="/about.html" otwiera opis lokalu, a to="/gallery.html" galerię.
    Adresy muszą odpowiadać trasom zdefiniowanym w app/router.tsx.
 
 7. Właściwość className:
@@ -127,6 +124,6 @@ Ten plik tworzy dostępne menu główne, obsługuje przechodzenie między strona
 i pozwala CSS wyróżnić link odpowiadający aktualnie otwartej stronie.
 
 Zastosowanie praktyczne:
-To menu widoczne w nagłówku. Gość wybiera w nim Home, Menu, About us, Gallery
-albo Contact, a React zmienia podstronę bez przeładowania całego dokumentu.
+To menu widoczne w nagłówku. Gość wybiera w nim Home, About us, Gallery albo
+Contact, a React zmienia podstronę bez przeładowania całego dokumentu.
 */

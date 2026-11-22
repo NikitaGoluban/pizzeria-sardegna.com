@@ -7,6 +7,7 @@ Section tworzy powtarzalną część treści z nagłówkiem drugiego poziomu h2.
 Dane otrzymywane przez props:
 - title jest wymaganym tytułem sekcji;
 - children jest opcjonalną zawartością sekcji, na przykład tekstem, listą lub kartami.
+- className jest opcjonalną dodatkową klasą dla sekcji wymagającej własnego wyglądu.
 
 Jak działa:
 1. props.title jest wyświetlany w elemencie h2.
@@ -29,11 +30,14 @@ import type { ReactNode } from 'react'
 interface SectionProps {
   title: string
   children?: ReactNode
+  className?: string
 }
 
 export function Section(props: SectionProps) {
+  const className = props.className === undefined ? 'content-section' : `content-section ${props.className}`
+
   return (
-    <section className="content-section">
+    <section className={className}>
       <h2>{props.title}</h2>
       {props.children}
     </section>
