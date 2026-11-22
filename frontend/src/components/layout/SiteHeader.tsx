@@ -47,8 +47,12 @@ export function SiteHeader() {
         {/* to="/" prowadzi do strony głównej. */}
         {/* aria-label przekazuje opis linku czytnikom ekranu. */}
         <Link className="site-logo" to="/" aria-label={translation.t('common.logoHomeLabel')}>
-          <img className="site-crest" src="/sardinia-crest.svg" alt="" aria-hidden="true" />
-          <span>Pizzeria Sardegna</span>
+          {/* Osobna ramka pozwala przeprowadzić błysk tylko przez powierzchnię herbu. */}
+          <span className="site-crest-frame" aria-hidden="true">
+            <img className="site-crest" src="/sardinia-crest.svg" alt="" />
+          </span>
+          {/* data-label dostarcza tę samą nazwę dekoracyjnej warstwie błysku w CSS. */}
+          <span className="site-logo-name" data-label="Pizzeria Sardegna">Pizzeria Sardegna</span>
         </Link>
 
         <div className="header-actions-layout">

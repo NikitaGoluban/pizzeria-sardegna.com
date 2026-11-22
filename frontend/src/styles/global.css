@@ -75,11 +75,106 @@ p {
   text-decoration: none;
 }
 
-.site-crest {
+.site-crest-frame {
+  position: relative;
   display: block;
   width: 3rem;
-  height: auto;
   flex: 0 0 auto;
+  overflow: hidden;
+  clip-path: polygon(3% 2%, 97% 2%, 97% 84%, 82% 91%, 50% 98%, 18% 91%, 3% 84%);
+}
+
+.site-crest {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Wąski refleks przechodzi przez herb tylko raz na dziewięć sekund. */
+.site-crest-frame::after {
+  position: absolute;
+  inset: -25% auto -25% -55%;
+  width: 34%;
+  content: '';
+  background: linear-gradient(90deg, transparent, rgb(255 248 207 / 80%), transparent);
+  opacity: 0;
+  transform: skewX(-18deg);
+  animation: crest-shine 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.site-logo-name {
+  position: relative;
+}
+
+/* Druga, przezroczysta kopia napisu pokazuje wyłącznie przesuwający się refleks. */
+.site-logo-name::after {
+  position: absolute;
+  inset: 0;
+  content: attr(data-label);
+  background: linear-gradient(105deg, transparent 38%, #fff8cf 48%, #fff 50%, #fff8cf 52%, transparent 62%);
+  background-position: 135% 0;
+  background-size: 250% 100%;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: name-shine 9s ease-in-out 250ms infinite;
+  pointer-events: none;
+}
+
+@keyframes crest-shine {
+  0%,
+  72% {
+    left: -55%;
+    opacity: 0;
+  }
+
+  76% {
+    opacity: 0.85;
+  }
+
+  88% {
+    left: 125%;
+    opacity: 0.85;
+  }
+
+  92%,
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+@keyframes name-shine {
+  0%,
+  72% {
+    background-position: 135% 0;
+    opacity: 0;
+  }
+
+  76% {
+    opacity: 1;
+  }
+
+  88% {
+    background-position: -35% 0;
+    opacity: 1;
+  }
+
+  92%,
+  100% {
+    background-position: -35% 0;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-crest-frame::after,
+  .site-logo-name::after {
+    animation: none;
+  }
 }
 
 .header-actions-layout {
